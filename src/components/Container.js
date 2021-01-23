@@ -6,7 +6,7 @@ import { LoadingOutlined } from "@ant-design/icons";
 
 const Container = (props) => {
   const { pokemons } = props; //recibiendo por props desde elcomponente padre
-  // prueba de push en github
+  // prueba de push en github ///////////
   console.log(props);
 
   console.log("poke ", pokemons);
