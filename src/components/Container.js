@@ -8,6 +8,9 @@ const Container = (props) => {
   const { pokemons } = props; //recibiendo por props desde elcomponente padre
   // prueba de push en github ///////////
   console.log(props);
+  console.log(props);
+  console.log(props);
+  console.log(props);
 
   console.log("poke ", pokemons);
   const antIcon = <LoadingOutlined style={{ fontSize: 50 }} spin />;
