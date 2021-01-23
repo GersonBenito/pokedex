@@ -1,17 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Card, Spin } from "antd";
+import { Card, Spin, Badge} from "antd";
 import "antd/dist/antd.css";
 import { LoadingOutlined } from "@ant-design/icons";
+import { Ranking } from "./Ranking";
+import PaginationAnd from "./Pagination/PaginationAnd";
 
 const Container = (props) => {
   const { pokemons } = props; //recibiendo por props desde elcomponente padre
-  // prueba de push en github ///////////
-  console.log(props);
-  console.log(props);
-  console.log(props);
-  console.log(props);
-
   console.log("poke ", pokemons);
   const antIcon = <LoadingOutlined style={{ fontSize: 50 }} spin />;
 
@@ -37,32 +33,48 @@ const Container = (props) => {
                 />
               </div>
               <div>
-                <div>
+                <div className="nameAndId">
                   <h3>{item.name}</h3>
-                  <div>#{item.id}</div>
+                  <div><Badge count={item.id} overflowCount={1000} /></div>
                 </div>
                 <div>
-                  <div>
+                  <div className="types">
                     {item.types.map((type, idx) => {
                       return <div key={idx}>{type.type.name}</div>;
                     })}
                   </div>
-                  <div>🍕</div>
+                  <Ranking />
                 </div>
               </div>
             </Card>
           ))
         )}
       </div>
+      <PaginationAnd />
     </ContainerPokemon>
   );
 };
 
 const ContainerPokemon = styled.div`
-  display: grid;
-  //grid-grid-auto-columns: repeat(3, 1fr);
-  grid-gap: 10px;
   padding: 0px 10px;
+  .types{
+    display:flex;
+    justify-content: space-around;
+    width: 175px;
+    font-family: Arial;
+  }
+  .ant-card-body {
+    padding: 24px;
+    width: 100%;
+    display: flex;
+}
+  .nameAndId{
+  //  width: 255px;
+    display:flex;
+    justify-content: space-between;
+    width: 98%;
+    //flex-flow:row;
+  }
   .cargando{
     display:flex;
     align-items:center;
@@ -72,9 +84,9 @@ const ContainerPokemon = styled.div`
   .carta {
     margin-bottom: 30px;
     border-radius: 20px;
-    display: flex;
+    //display: flex;
     flex:auto;
-    width:310px;
+    width:300px;
     margin-right: 25px;
     // box-shadow: 2px 8px 12px  #888888;
     box-shadow: 10px 5px 15px #ef4f4f;
@@ -90,7 +102,9 @@ const ContainerPokemon = styled.div`
     border-radius: 5px;
     display:flex;
     flex-flow:wrap;
-    //justify-content: space-evenly;
+    justify-content: space-evenly;
+    height: 500px;
+    overflow-y: scroll;
   }
   img {
     width: 100px;
