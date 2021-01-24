@@ -4,7 +4,9 @@ import Pagination from "./Pagination";
 import Search from "./Search";
 //import Title from "./Title";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { page, totalPage, onleftClick, onRightClick } = props;
+  console.log('props desde el navbar ',props);
   const urlImg =
     "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
   return (
@@ -17,7 +19,7 @@ const Navbar = () => {
         <div>🍕</div>
       </nav>
       <Search />
-      <Pagination />
+      <Pagination page={page} totalPage={totalPage} onleftClick={onleftClick} onRightClick={onRightClick} />
     </Container>
   );
 };

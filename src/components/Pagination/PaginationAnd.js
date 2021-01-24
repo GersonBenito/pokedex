@@ -4,9 +4,10 @@ import { Pagination } from 'antd';
 import styled from 'styled-components';
 
 const PaginationAnd = (props) => {
+    const { page, totalPage } = props;
     return (
         <Container>
-          <Pagination defaultCurrent={1} total={50} />  
+          <Pagination defaultCurrent={page} total={totalPage} />  
         </Container>
     )
 }

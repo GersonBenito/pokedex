@@ -7,14 +7,14 @@ import { Ranking } from "./Ranking";
 import PaginationAnd from "./Pagination/PaginationAnd";
 
 const Container = (props) => {
-  const { pokemons } = props; //recibiendo por props desde elcomponente padre
-  console.log("poke ", pokemons);
+  const { pokemons, loading, page, totalPage } = props; //recibiendo por props desde elcomponente padre
+  console.log("poke ", props);
   const antIcon = <LoadingOutlined style={{ fontSize: 50 }} spin />;
 
   return (
     <ContainerPokemon>
       <div className="site-card-border-less-wrapper">
-        {pokemons.length === 0 ? (
+        {loading ? (
           <div className="cargando">
             <Spin indicator={antIcon} tip="Cargando..." />
           </div>
@@ -50,7 +50,7 @@ const Container = (props) => {
           ))
         )}
       </div>
-      <PaginationAnd />
+      <PaginationAnd page={page} totalPage={totalPage} />
     </ContainerPokemon>
   );
 };

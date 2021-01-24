@@ -4,16 +4,18 @@ import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
 import { Space } from "antd";
 import styled from "styled-components";
 
-const PaginationPokedex = () => {
+const PaginationPokedex = (props) => {
+  const { page, totalPage, onleftClick, onRightClick } = props;
+  console.log('props desde la paginacion pokedex',props);
   return (
     <Container>
       <Space>
         <div className="previous">
-          <LeftCircleOutlined />
+          <LeftCircleOutlined onClick={onleftClick} />
         </div>
-        <div>1 de 100</div>
+        <div>{page + 1} de {totalPage}</div>
         <div className="next">
-          <RightCircleOutlined />
+          <RightCircleOutlined onClick={onRightClick} />
         </div>
       </Space>
     </Container>

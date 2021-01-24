@@ -3,14 +3,21 @@ import styled from 'styled-components'
 import PaginationPokedex from './Pagination/PaginationPokedex';
 import Title from './Title';
 
-const Pagination = () => {
+const Pagination = (props) => {
+    const { page, totalPage, onleftClick, onRightClick } = props; 
+    console.log('props desde la paginacion', props);
     return (
         <div>
             <StylePagination>
                 {/**se puede agregar un icono svg de pokemon */}
                 <Title text='Lista de pokemones' /> 
                 <div className="pagination">
-                    <PaginationPokedex />
+                    <PaginationPokedex 
+                        page={page} 
+                        totalPage={totalPage} 
+                        onleftClick={onleftClick} 
+                        onRightClick={onRightClick} 
+                    />
                 </div>
             </StylePagination>
         </div>
