@@ -5,7 +5,6 @@ import Title from './Title';
 
 const Pagination = (props) => {
     const { page, totalPage, onleftClick, onRightClick } = props; 
-    console.log('props desde la paginacion', props);
     return (
         <div>
             <StylePagination>

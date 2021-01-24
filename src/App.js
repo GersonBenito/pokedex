@@ -31,13 +31,11 @@ function App() {
   },[page])
 
   const nextPage = () =>{
-    console.log('next page');
     const next = Math.max(page + 1, 0);
     setPage(next);
   }
 
   const previousPage = () =>{
-    console.log('previous page');
     const previous = Math.min(page - 1, totalPage)
     setPage(previous);
   }

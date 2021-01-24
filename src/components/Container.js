@@ -8,7 +8,6 @@ import PaginationAnd from "./Pagination/PaginationAnd";
 
 const Container = (props) => {
   const { pokemons, loading, page, totalPage } = props; //recibiendo por props desde elcomponente padre
-  console.log("poke ", props);
   const antIcon = <LoadingOutlined style={{ fontSize: 50 }} spin />;
 
   return (
