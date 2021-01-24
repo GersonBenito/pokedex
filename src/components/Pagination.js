@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PaginationPokedex from './Pagination/PaginationPokedex';
 import Title from './Title';
 
 const Pagination = () => {
@@ -8,7 +9,9 @@ const Pagination = () => {
             <StylePagination>
                 {/**se puede agregar un icono svg de pokemon */}
                 <Title text='Lista de pokemones' /> 
-                <div className="pagination">pagination</div>
+                <div className="pagination">
+                    <PaginationPokedex />
+                </div>
             </StylePagination>
         </div>
     )
